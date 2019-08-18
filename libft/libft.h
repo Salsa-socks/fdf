@@ -6,7 +6,7 @@
 /*   By: bnkosi <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/18 14:11:06 by bnkosi            #+#    #+#             */
-/*   Updated: 2019/08/12 11:37:22 by bnkosi           ###   ########.fr       */
+/*   Updated: 2019/08/18 12:12:55 by bnkosi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,5 +85,6 @@ char				ft_getchar(void);
 void				ft_print_array(int *array, int ary_size);
 int					ft_atoll(const char *str);
 int					get_next_line(const int fd, char **line);
+int					ft_nbrlen(int n);
 
 #endif

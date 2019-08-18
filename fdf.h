@@ -6,7 +6,7 @@
 /*   By: bnkosi <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/18 10:46:25 by bnkosi            #+#    #+#             */
-/*   Updated: 2019/08/18 11:40:47 by bnkosi           ###   ########.fr       */
+/*   Updated: 2019/08/18 14:08:52 by bnkosi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 #include <math.h>
 #include "./minilix/mlx.h"
 
-thpedef struct	f_map
+typedef struct	f_map
 {
 int				**map;
 void			*mlx;
@@ -46,5 +46,9 @@ int				swapit;
 int				width;
 int				height;
 }				f_map;
+
+void 			make_window(f_map * fmap);
+int				**creategrid(f_map *fmlist);
+
 
 #endif
