@@ -1,27 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   make_window.c                                      :+:      :+:    :+:   */
+/*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bnkosi <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/08/18 10:52:09 by bnkosi            #+#    #+#             */
-/*   Updated: 2019/08/18 11:46:24 by bnkosi           ###   ########.fr       */
+/*   Created: 2019/05/18 09:39:09 by bnkosi            #+#    #+#             */
+/*   Updated: 2019/06/30 13:56:54 by bnkosi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "fdf.h"
+#include "libft.h"
 
-void	make_window(f_map *fmap)
+size_t	ft_strlen(const char *str)
 {
-	fmap->mlx = mlx_init();
-	fmap->window = mlx_new_window(fmap->mlx, fmap->w_width, fmap->w_height, "FDF");
-	mlx_key_hook(fmap->window, escclose, fmap);
-	fmap->xgrid = creategrid(fmap);
-	fmap->ygrid = creategrid(fmap);
-	create_box(fmap);
-	edit_box(fmap);
-	placebox(fmap);
-	draw_grid(fmap);
-	mlx_loop(fmap->mlx);
+	size_t i;
+
+	i = 0;
+	while (str[i] != '\0')
+		i++;
+	return (i);
 }

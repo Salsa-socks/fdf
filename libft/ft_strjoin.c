@@ -1,27 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   make_window.c                                      :+:      :+:    :+:   */
+/*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bnkosi <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/08/18 10:52:09 by bnkosi            #+#    #+#             */
-/*   Updated: 2019/08/18 11:46:24 by bnkosi           ###   ########.fr       */
+/*   Created: 2019/05/24 08:45:09 by bnkosi            #+#    #+#             */
+/*   Updated: 2019/05/31 15:01:51 by bnkosi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "fdf.h"
+#include "libft.h"
 
-void	make_window(f_map *fmap)
+char		*ft_strjoin(char const *s1, char const *s2)
 {
-	fmap->mlx = mlx_init();
-	fmap->window = mlx_new_window(fmap->mlx, fmap->w_width, fmap->w_height, "FDF");
-	mlx_key_hook(fmap->window, escclose, fmap);
-	fmap->xgrid = creategrid(fmap);
-	fmap->ygrid = creategrid(fmap);
-	create_box(fmap);
-	edit_box(fmap);
-	placebox(fmap);
-	draw_grid(fmap);
-	mlx_loop(fmap->mlx);
+	char	*str;
+	int		i;
+	int		j;
+
+	if (!s1 || !s2)
+		return (NULL);
+	i = 0;
+	j = 0;
+	str = (char *)malloc(sizeof(char) * (ft_strlen(s1) + ft_strlen(s2) + 1));
+	if (str == NULL)
+		return (NULL);
+	while (s1[i] != '\0')
+	{
+		str[i] = s1[i];
+		i++;
+	}
+	while (s2[j] != '\0')
+	{
+		str[i + j] = s2[j];
+		j++;
+	}
+	str[i + j] = '\0';
+	return (str);
 }

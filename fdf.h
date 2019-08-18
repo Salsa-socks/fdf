@@ -6,7 +6,7 @@
 /*   By: bnkosi <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/18 10:46:25 by bnkosi            #+#    #+#             */
-/*   Updated: 2019/08/18 10:51:37 by bnkosi           ###   ########.fr       */
+/*   Updated: 2019/08/18 11:40:47 by bnkosi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,12 +22,12 @@ thpedef struct	f_map
 {
 int				**map;
 void			*mlx;
-void			*win;
+void			*window;
 int				color;
 int				w;
 int				h;
-int				winwidth;
-int				winheight;
+int				w_width;
+int				w_height;
 int				**xgrid;
 int				**ygrid;
 int				dx;

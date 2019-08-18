@@ -1,27 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   make_window.c                                      :+:      :+:    :+:   */
+/*   ft_strnstr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bnkosi <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/08/18 10:52:09 by bnkosi            #+#    #+#             */
-/*   Updated: 2019/08/18 11:46:24 by bnkosi           ###   ########.fr       */
+/*   Created: 2019/05/31 14:55:36 by bnkosi            #+#    #+#             */
+/*   Updated: 2019/05/31 14:55:44 by bnkosi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "fdf.h"
+#include "libft.h"
 
-void	make_window(f_map *fmap)
+char	*ft_strnstr(const char *hay, const char *ndl, size_t len)
 {
-	fmap->mlx = mlx_init();
-	fmap->window = mlx_new_window(fmap->mlx, fmap->w_width, fmap->w_height, "FDF");
-	mlx_key_hook(fmap->window, escclose, fmap);
-	fmap->xgrid = creategrid(fmap);
-	fmap->ygrid = creategrid(fmap);
-	create_box(fmap);
-	edit_box(fmap);
-	placebox(fmap);
-	draw_grid(fmap);
-	mlx_loop(fmap->mlx);
+	size_t i;
+	size_t j;
+
+	i = 0;
+	if (hay[0] == '\0')
+		return (NULL);
+	if (ndl[0] == '\0')
+		return ((char *)hay);
+	while (i < len && hay[i] != '\0')
+	{
+		j = 0;
+		while (i + j < len && ndl[j] == hay[i + j] && ndl[j] != '\0')
+			j++;
+		if (ndl[j] == '\0')
+			return ((char *)hay + i);
+		i++;
+	}
+	return (NULL);
 }

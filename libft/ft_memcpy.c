@@ -1,27 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   make_window.c                                      :+:      :+:    :+:   */
+/*   ft_memcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bnkosi <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/08/18 10:52:09 by bnkosi            #+#    #+#             */
-/*   Updated: 2019/08/18 11:46:24 by bnkosi           ###   ########.fr       */
+/*   Created: 2019/05/19 10:32:18 by bnkosi            #+#    #+#             */
+/*   Updated: 2019/05/29 10:33:53 by bnkosi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "fdf.h"
+#include "libft.h"
 
-void	make_window(f_map *fmap)
+void		*ft_memcpy(void *dst, const void *src, size_t n)
 {
-	fmap->mlx = mlx_init();
-	fmap->window = mlx_new_window(fmap->mlx, fmap->w_width, fmap->w_height, "FDF");
-	mlx_key_hook(fmap->window, escclose, fmap);
-	fmap->xgrid = creategrid(fmap);
-	fmap->ygrid = creategrid(fmap);
-	create_box(fmap);
-	edit_box(fmap);
-	placebox(fmap);
-	draw_grid(fmap);
-	mlx_loop(fmap->mlx);
+	size_t	i;
+	char	*d;
+	char	*s;
+
+	i = 0;
+	d = (char *)dst;
+	s = (char *)src;
+	if (src == NULL && dst == NULL)
+		return (dst);
+	while (i < n)
+	{
+		d[i] = s[i];
+		i++;
+	}
+	return (dst);
 }

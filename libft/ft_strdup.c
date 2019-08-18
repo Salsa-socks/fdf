@@ -1,27 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   make_window.c                                      :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bnkosi <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/08/18 10:52:09 by bnkosi            #+#    #+#             */
-/*   Updated: 2019/08/18 11:46:24 by bnkosi           ###   ########.fr       */
+/*   Created: 2019/05/18 10:09:22 by bnkosi            #+#    #+#             */
+/*   Updated: 2019/05/29 07:50:33 by bnkosi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "fdf.h"
+#include "libft.h"
 
-void	make_window(f_map *fmap)
+char		*ft_strdup(const char *src)
 {
-	fmap->mlx = mlx_init();
-	fmap->window = mlx_new_window(fmap->mlx, fmap->w_width, fmap->w_height, "FDF");
-	mlx_key_hook(fmap->window, escclose, fmap);
-	fmap->xgrid = creategrid(fmap);
-	fmap->ygrid = creategrid(fmap);
-	create_box(fmap);
-	edit_box(fmap);
-	placebox(fmap);
-	draw_grid(fmap);
-	mlx_loop(fmap->mlx);
+	char	*str;
+	size_t	i;
+
+	i = 0;
+	str = (char *)malloc(sizeof(char) * ft_strlen(src) + 1);
+	if (str == NULL)
+		return (NULL);
+	while (src[i] != '\0')
+	{
+		str[i] = src[i];
+		i++;
+	}
+	str[i] = '\0';
+	return (str);
 }
