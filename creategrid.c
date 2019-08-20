@@ -6,7 +6,7 @@
 /*   By: bnkosi <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/18 13:29:47 by bnkosi            #+#    #+#             */
-/*   Updated: 2019/08/18 13:49:17 by bnkosi           ###   ########.fr       */
+/*   Updated: 2019/08/20 11:10:57 by bnkosi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,18 +57,6 @@ int			**make_map(int fd, f_map *fmap)
 	return(fmap->map);
 }
 
-int line_w2(char *str)
-{
-	int i;
-
-	i = 0;
-	while (str[i])
-	{
-		i++;
-	}
-	return (i);
-}
-
 void		line_h(int fd, f_map *fmlist)
 {
 	char 	**bigline;
@@ -81,7 +69,7 @@ void		line_h(int fd, f_map *fmlist)
 	if (get_next_line(fd, &line) > 0)
 	{
 		bigline = ft_strplit(line, ' ');
-		fmlist->w = linew2(bigline);
+		fmlist->w = ft_strlen(bigline);
 		while (bigline[i])
 		{
 			free(bigline[i]);
