@@ -6,7 +6,7 @@
 /*   By: bnkosi <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/18 13:29:47 by bnkosi            #+#    #+#             */
-/*   Updated: 2019/08/20 12:48:37 by bnkosi           ###   ########.fr       */
+/*   Updated: 2019/08/21 11:25:18 by bnkosi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,4 +86,19 @@ void		line_h(int fd, t_map *fmlist)
 	}
 	fmlist->h = wth;
 	close(fd);
+}
+
+int			**creategrid(t_map *fmlist)
+{
+	int val;
+	int **grid;
+
+	grid = (int **)ft_memalloc(sizeof(int *) *fmlist->h);
+	val = fmlist->h - 1;
+	while (val >= 0)
+	{
+		grid[val] = (int *)ft_memalloc(sizeof(int) * fmlist->w);
+		val--;
+	}
+	return (grid);
 }
