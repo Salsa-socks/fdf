@@ -6,20 +6,11 @@
 /*   By: bnkosi <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/20 10:39:13 by bnkosi            #+#    #+#             */
-/*   Updated: 2019/08/20 11:06:17 by bnkosi           ###   ########.fr       */
+/*   Updated: 2019/08/20 13:37:47 by bnkosi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fdf.h"
-
-int		strlen2(char **str)
-{
-	int	i;
-	i = 0;
-	while (str[i])
-		i++;
-	return (i);
-}
 
 void	veryfyline(char *str)
 {
@@ -51,7 +42,7 @@ void	verify_width(int fd, int wd, int twd)
 		verifyline(str);
 		if (!(str1 = ft_strsplit(str, ' ')))
 			ft_putendl("Error: unable to split line");
-		if (!(twd = strlen2(str1)))
+		if (!(twd = ft_strlenarr(str1)))
 			ft_putendl("Error: incorrect width");
 		free(str);
 		free(str1);
@@ -71,7 +62,22 @@ void	verify_file(int fd, char *file)
 	close(fd);
 }
 
-int		**draw_map(int fd, f_map *fmap)
+int		**createmap(t_map fmaplist)
+{
+	int **map;
+	int amnt;
+
+	map = (int **)ft_memalloc(sizeof(int *) *fmaplist->h);
+	amnt = fmaplist->h - 1;
+	while (amnt >= 0)
+	{
+		map[amnt] = 0;
+		amnt--;
+	}
+	return (map);
+}
+
+int		**draw_map(int fd, t_map *fmap)
 {
 	char *str;
 	int	i;

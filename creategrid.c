@@ -6,7 +6,7 @@
 /*   By: bnkosi <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/18 13:29:47 by bnkosi            #+#    #+#             */
-/*   Updated: 2019/08/20 11:10:57 by bnkosi           ###   ########.fr       */
+/*   Updated: 2019/08/20 12:48:37 by bnkosi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ int strtointcopy(char *str)
 	return (res);
 }
 
-int			**make_map(int fd, f_map *fmap)
+int			**make_map(int fd, t_map *fmap)
 {
 	char 	*str;
 	int		i;
@@ -57,7 +57,7 @@ int			**make_map(int fd, f_map *fmap)
 	return(fmap->map);
 }
 
-void		line_h(int fd, f_map *fmlist)
+void		line_h(int fd, t_map *fmlist)
 {
 	char 	**bigline;
 	int		wth;
