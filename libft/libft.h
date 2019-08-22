@@ -6,7 +6,7 @@
 /*   By: bnkosi <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/18 14:11:06 by bnkosi            #+#    #+#             */
-/*   Updated: 2019/08/21 08:45:23 by bnkosi           ###   ########.fr       */
+/*   Updated: 2019/08/22 13:02:06 by bnkosi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,5 +89,6 @@ int					ft_nbrlen(int n);
 int					ft_isletter(char c);
 int					ft_strlenarr(char **str);
 void				ft_swapint(int *c, int *v);
+int					ft_isspace(char c);
 
 #endif

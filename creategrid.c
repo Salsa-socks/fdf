@@ -6,15 +6,15 @@
 /*   By: bnkosi <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/18 13:29:47 by bnkosi            #+#    #+#             */
-/*   Updated: 2019/08/21 11:25:18 by bnkosi           ###   ########.fr       */
+/*   Updated: 2019/08/22 12:43:14 by bnkosi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fdf.h"
 
-int strtointcopy(char *str)
+int *strtointcopy(char *str)
 {
-	int res;
+	int *res;
 	int i;
 	int j;
 	int len;
@@ -68,8 +68,8 @@ void		line_h(int fd, t_map *fmlist)
 	i = 0;
 	if (get_next_line(fd, &line) > 0)
 	{
-		bigline = ft_strplit(line, ' ');
-		fmlist->w = ft_strlen(bigline);
+		bigline = ft_strsplit(line, ' ');
+		fmlist->w = ft_strlen(*bigline);
 		while (bigline[i])
 		{
 			free(bigline[i]);

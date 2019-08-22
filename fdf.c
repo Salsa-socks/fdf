@@ -6,7 +6,7 @@
 /*   By: bnkosi <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/21 12:36:38 by bnkosi            #+#    #+#             */
-/*   Updated: 2019/08/21 12:53:32 by bnkosi           ###   ########.fr       */
+/*   Updated: 2019/08/22 07:31:52 by bnkosi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,12 +17,12 @@ int		main(int ac, char **av)
 	t_map *fmap;
 	int fd;
 
-	if (argc != 2)
+	if (ac != 2)
 	{
 		ft_putendl("Error: One argument needed");
 		exit(0);	
 	}
-	if ((fd = open(argv[1], O_RDONLY)) == -1)
+	if ((fd = open(av[1], O_RDONLY)) == -1)
 	{
 		ft_putendl("Error: failed to open file");
 		exit(0);
@@ -35,15 +35,15 @@ int		main(int ac, char **av)
 	fmap->w_width = 1200;
 	fmap->w_height = 1200;
 	fmap->color = 0xffffff;
-	verify_file(fd, argv[1]);
-	fd = open(argv[1], O_RDONLY);
+	verify_file(fd, av[1]);
+	fd = open(av[1], O_RDONLY);
 	line_h(fd, fmap);
 	fmap->map = createmap(fmap);
-	fd = open(argv[1], O_RDONLY);
+	fd = open(av[1], O_RDONLY);
 	fmap->map = draw_map(fd, fmap);
 	make_window(fmap);
 	fd = fmap->h + 1;
-	while (fd > = 0)
+	while (fd >= 0)
 	{
 		free(fmap->map[fd]);
 		fd--;

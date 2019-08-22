@@ -6,7 +6,7 @@
 /*   By: bnkosi <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/18 10:52:09 by bnkosi            #+#    #+#             */
-/*   Updated: 2019/08/21 12:54:17 by bnkosi           ###   ########.fr       */
+/*   Updated: 2019/08/22 07:32:27 by bnkosi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,6 +67,6 @@ void	make_window(t_map *fmap)
 	edit_box(fmap);
 	centre_box(fmap);
 	draw_grid(fmap);
-	info_start(fmap);
+	info_str(fmap);
 	mlx_loop(fmap->mlx);
 }

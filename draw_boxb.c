@@ -6,7 +6,7 @@
 /*   By: bnkosi <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/21 07:48:16 by bnkosi            #+#    #+#             */
-/*   Updated: 2019/08/21 09:00:46 by bnkosi           ###   ########.fr       */
+/*   Updated: 2019/08/22 08:39:04 by bnkosi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ void	set_draw_line(t_map *fmap)
 
 void	draw_line(t_map *fmap)
 {
-	set_draw_line(map);
+	set_draw_line(fmap);
 	if (fmap->dy > fmap->dx)
 	{
 		ft_swapint(&fmap->dx, &fmap->dy);
@@ -63,7 +63,7 @@ void	draw_vert(t_map *fmap)
 		{
 			fmap->x1 = fmap->xgrid[fmap->height][fmap->width];
 			fmap->y1 = fmap->ygrid[fmap->height][fmap->width];
-			if (fmap->height + 1 = fmap->h)
+			if (fmap->height + 1 == fmap->h)
 			{
 				fmap->x2 = fmap->xgrid[fmap->height + 1][fmap->width];
 				fmap->y2 = fmap->ygrid[fmap->height + 1][fmap->width];
@@ -85,7 +85,7 @@ void	draw_hori(t_map *fmap)
 		{
 			fmap->x1 = fmap->xgrid[fmap->height][fmap->width];
 			fmap->y1 = fmap->ygrid[fmap->height][fmap->width];
-			if (fmap->width + 1 = fmap->w)
+			if (fmap->width + 1 == fmap->w)
 			{
 				fmap->x2 = fmap->xgrid[fmap->height][fmap->width + 1];
 				fmap->y2 = fmap->ygrid[fmap->height][fmap->width + 1];

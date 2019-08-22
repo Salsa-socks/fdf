@@ -6,7 +6,7 @@
 /*   By: bnkosi <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/18 10:46:25 by bnkosi            #+#    #+#             */
-/*   Updated: 2019/08/22 07:11:26 by bnkosi           ###   ########.fr       */
+/*   Updated: 2019/08/22 13:20:55 by bnkosi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 #include <stdlib.h>
 #include <fcntl.h>
 #include <math.h>
-#include "./minilix/mlx.h"
+#include "./minilibx/mlx.h"
 
 typedef struct	t_map
 {
@@ -50,7 +50,7 @@ int				height;
 void 			make_window(t_map * fmap);
 int				**make_map(int fd, t_map *fmap);
 int				**creategrid(t_map *fmlist);
-int				strtointcopy(char *str);
+int				*strtointcopy(char *str);
 int				**make_map(int fd, t_map *fmap);
 void			line_h(int fd, t_map *fmap);
 int				create_box(t_map *fmap);
@@ -64,13 +64,15 @@ void			draw_hori(t_map *fmap);
 void			draw_grid(t_map *fmap);
 int				**draw_map(int fd, t_map *fmap);
 void			verify_file(int fd, char *file);
-void			verify_width(int fd, int wd, inttwd);
+void			verify_width(int fd, int wd, int twd);
 void			verifyline(char *str);
 void			info_str(t_map *fmap);
 int				escclose(int key, t_map *fmap);
 int				color_key(int key, t_map *fmap);
 int				build_z(int key, t_map *fmap);
-int				find_z(intx, int y, t_map *fmap);
+int				find_z(int x, int y, t_map *fmap);
 void			make_window(t_map *fmap);
+int				**createmap(t_map *fmlist);
+void			veryfyline(char *str);
 
 #endif

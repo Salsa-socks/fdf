@@ -6,7 +6,7 @@
 /*   By: bnkosi <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/21 06:17:30 by bnkosi            #+#    #+#             */
-/*   Updated: 2019/08/21 07:12:06 by bnkosi           ###   ########.fr       */
+/*   Updated: 2019/08/22 08:41:29 by bnkosi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,11 +58,11 @@ int		create_box(t_map *fmap)
 		{
 			fmap->x1 += val;
 			fmap->xgrid[ht][wd] = fmap->x1;
-			fmao->ygrid[ht][wd] = fmap->y1;
+			fmap->ygrid[ht][wd] = fmap->y1;
 			wd++;
 		}
 		fmap->y1 += val;
-		height++;
+		ht++;
 	}
 	return (0);
 }
@@ -80,7 +80,7 @@ int		edit_box(t_map *fmap)
 		while (wd != fmap->w)
 		{
 			fmap->xgrid[ht][wd] = fmap->xgrid[ht][wd] - fmap->map[ht][wd];
-			fmap->ygrid[h][wd] = fmap->ygrid[ht][wd] + ((fmap->xgrid[ht][wd] +
+			fmap->ygrid[ht][wd] = fmap->ygrid[ht][wd] + ((fmap->xgrid[ht][wd] +
 						fmap->map[ht][wd]) / 2);
 			wd++;
 		}

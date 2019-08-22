@@ -6,7 +6,7 @@
 #    By: bnkosi <marvin@42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/05/27 11:56:07 by bnkosi            #+#    #+#              #
-#    Updated: 2019/08/16 08:21:17 by bnkosi           ###   ########.fr        #
+#    Updated: 2019/08/22 13:21:49 by bnkosi           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -71,6 +71,12 @@ SRC = ft_bzero.c \
 	  ft_atoll.c\
 	  ft_print_array.c\
 	  get_next_line.c\
+	  ft_nbrlen.c\
+	  ft_isspace.c\
+	  ft_strlenarr.c\
+	  ft_swapint.c\
+	  ft_isspace.c\
+	  ft_isletter.c\
 
 OBJ = $(SRC:%.c=%.o)
 

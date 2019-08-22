@@ -6,7 +6,7 @@
 /*   By: bnkosi <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/20 10:39:13 by bnkosi            #+#    #+#             */
-/*   Updated: 2019/08/21 09:10:54 by bnkosi           ###   ########.fr       */
+/*   Updated: 2019/08/22 12:53:21 by bnkosi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,16 +56,38 @@ void	verify_width(int fd, int wd, int twd)
 		free(str);
 		free(str1);
 	}
+	else
+	{
+		ft_putendl("Error: No file detected");
+		exit(0);
+	}
+	while (get_next_line(fd, &str) > 0)
+	{
+		veryfyline(str);
+		if (!(str1 = ft_strsplit(str, ' ')))
+		{
+			ft_putendl("Error: Line incorrect, unable to split");
+			exit(0);
+		}
+		wd = ft_strlenarr(str1);
+		if (twd != wd)
+		{
+			ft_putendl("Error: width unven");
+			exit(0);
+		}
+		free(str);
+		free(str1);
+	}
 }
 
-void	verify_file(int fd, char *file)
+void	verify_file(int fd, char *file_)
 {
 	int wd;
 	int twd;
 
 	wd = 0;
 	twd = 0;
-	if (ft_strstr(filename, ".fdf") == 0)
+	if (ft_strstr(file_, ".fdf") == 0)
 	{
 		ft_putendl("Error: Incorrect filename");
 		exit(0);
@@ -74,7 +96,7 @@ void	verify_file(int fd, char *file)
 	close(fd);
 }
 
-int		**createmap(t_map fmaplist)
+int		**createmap(t_map *fmaplist)
 {
 	int **map;
 	int amnt;
