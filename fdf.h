@@ -6,7 +6,7 @@
 /*   By: bnkosi <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/18 10:46:25 by bnkosi            #+#    #+#             */
-/*   Updated: 2019/08/21 13:26:57 by bnkosi           ###   ########.fr       */
+/*   Updated: 2019/08/22 07:11:26 by bnkosi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,5 +66,11 @@ int				**draw_map(int fd, t_map *fmap);
 void			verify_file(int fd, char *file);
 void			verify_width(int fd, int wd, inttwd);
 void			verifyline(char *str);
+void			info_str(t_map *fmap);
+int				escclose(int key, t_map *fmap);
+int				color_key(int key, t_map *fmap);
+int				build_z(int key, t_map *fmap);
+int				find_z(intx, int y, t_map *fmap);
+void			make_window(t_map *fmap);
 
 #endif
