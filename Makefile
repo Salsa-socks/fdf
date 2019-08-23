@@ -1,15 +1,3 @@
-# **************************************************************************** #
-#                                                                              #
-#                                                         :::      ::::::::    #
-#    Makefile                                           :+:      :+:    :+:    #
-#                                                     +:+ +:+         +:+      #
-#    By: bnkosi <marvin@42.fr>                      +#+  +:+       +#+         #
-#                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2019/08/22 07:11:59 by bnkosi            #+#    #+#              #
-#    Updated: 2019/08/23 08:27:12 by bnkosi           ###   ########.fr        #
-#                                                                              #
-# **************************************************************************** #
-
 NAME = fdf
 
 CC = clang
@@ -18,7 +6,7 @@ FLAGS = -Wall -Wextra -Werror
 
 FLAGS2 = -L minilibx -lmlx -framework OpenGL -framework AppKit
 
-SRC = fdf.c mlx_opts.c make_window.c draw_box.c draw_boxb.c creategrid.c draw_map.c 
+SRC = *.c
 
 LIBFT_DIR = libft
 LIBS = libft/libft.a
@@ -44,4 +32,3 @@ fclean: clean
 	rm -f $(NAME)
 
 re: fclean all
-
