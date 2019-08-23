@@ -6,7 +6,7 @@
 /*   By: bnkosi <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/18 14:11:06 by bnkosi            #+#    #+#             */
-/*   Updated: 2019/08/22 13:02:06 by bnkosi           ###   ########.fr       */
+/*   Updated: 2019/08/23 10:28:55 by bnkosi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 # include <string.h>
 # include <stdlib.h>
 # include <wchar.h>
+# include <fcntl.h>
 # include <stdio.h>
 # define BUFF_SIZE 1
 # define MAX_FD 1024 + 1

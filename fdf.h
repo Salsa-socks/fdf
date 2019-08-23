@@ -6,7 +6,7 @@
 /*   By: bnkosi <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/18 10:46:25 by bnkosi            #+#    #+#             */
-/*   Updated: 2019/08/22 13:20:55 by bnkosi           ###   ########.fr       */
+/*   Updated: 2019/08/22 13:51:20 by bnkosi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,6 +73,5 @@ int				build_z(int key, t_map *fmap);
 int				find_z(int x, int y, t_map *fmap);
 void			make_window(t_map *fmap);
 int				**createmap(t_map *fmlist);
-void			veryfyline(char *str);
 
 #endif

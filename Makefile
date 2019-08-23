@@ -6,11 +6,13 @@
 #    By: bnkosi <marvin@42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/08/22 07:11:59 by bnkosi            #+#    #+#              #
-#    Updated: 2019/08/22 07:18:49 by bnkosi           ###   ########.fr        #
+#    Updated: 2019/08/23 08:27:12 by bnkosi           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = fdf
+
+CC = clang
 
 FLAGS = -Wall -Wextra -Werror
 

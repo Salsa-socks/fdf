@@ -6,11 +6,11 @@
 /*   By: bnkosi <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/11 14:08:01 by bnkosi            #+#    #+#             */
-/*   Updated: 2019/07/11 16:04:49 by bnkosi           ###   ########.fr       */
+/*   Updated: 2019/08/23 10:27:24 by bnkosi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "get_next_line.h"
+#include "libft.h"
 
 static int		newlinecheck(char **str, char **line, int fd, int ret)
 {

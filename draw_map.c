@@ -6,13 +6,13 @@
 /*   By: bnkosi <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/20 10:39:13 by bnkosi            #+#    #+#             */
-/*   Updated: 2019/08/22 12:53:21 by bnkosi           ###   ########.fr       */
+/*   Updated: 2019/08/22 13:59:43 by bnkosi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fdf.h"
 
-void	veryfyline(char *str)
+void	verifyline(char *str)
 {
 	int i;
 
@@ -63,7 +63,7 @@ void	verify_width(int fd, int wd, int twd)
 	}
 	while (get_next_line(fd, &str) > 0)
 	{
-		veryfyline(str);
+		verifyline(str);
 		if (!(str1 = ft_strsplit(str, ' ')))
 		{
 			ft_putendl("Error: Line incorrect, unable to split");
