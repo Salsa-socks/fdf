@@ -6,7 +6,7 @@
 /*   By: bnkosi <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/18 13:29:47 by bnkosi            #+#    #+#             */
-/*   Updated: 2019/08/22 12:43:14 by bnkosi           ###   ########.fr       */
+/*   Updated: 2019/08/23 14:17:26 by bnkosi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ int *strtointcopy(char *str)
 	{
 		if (!(ft_isspace(str[i])) && str[i])
 		{
-			str[j] = ft_atoi(&str[i]);
+			str[j] = ft_gatoi(&str[i]);
 			i += ft_nbrlen(str[i]);
 			j++;
 		}

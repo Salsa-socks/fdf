@@ -6,7 +6,7 @@
 /*   By: bnkosi <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/21 07:48:16 by bnkosi            #+#    #+#             */
-/*   Updated: 2019/08/23 11:17:16 by bnkosi           ###   ########.fr       */
+/*   Updated: 2019/08/23 13:02:14 by bnkosi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,6 +56,7 @@ void	draw_line(t_map *fmap)
 void	draw_vert(t_map *fmap)
 {
 	fmap->height = 0;
+	fmap->width = 0;
 	while (fmap->height != fmap->h)
 	{
 		fmap->width = 0;
@@ -78,6 +79,7 @@ void	draw_vert(t_map *fmap)
 void	draw_hori(t_map *fmap)
 {
 	fmap->height = 0;
+	fmap->width = 0;
 	while (fmap->height != fmap->h)
 	{
 		fmap->width = 0;
