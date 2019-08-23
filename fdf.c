@@ -6,7 +6,7 @@
 /*   By: bnkosi <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/21 12:36:38 by bnkosi            #+#    #+#             */
-/*   Updated: 2019/08/22 07:31:52 by bnkosi           ###   ########.fr       */
+/*   Updated: 2019/08/23 10:53:21 by bnkosi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,11 +42,8 @@ int		main(int ac, char **av)
 	fd = open(av[1], O_RDONLY);
 	fmap->map = draw_map(fd, fmap);
 	make_window(fmap);
-	fd = fmap->h + 1;
+	fd = fmap->h - 1;
 	while (fd >= 0)
-	{
-		free(fmap->map[fd]);
-		fd--;
-	}
+		free(fmap->map[fd--]);
 	free(fmap->map);
 }

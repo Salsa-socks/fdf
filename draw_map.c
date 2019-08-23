@@ -6,7 +6,7 @@
 /*   By: bnkosi <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/20 10:39:13 by bnkosi            #+#    #+#             */
-/*   Updated: 2019/08/22 13:59:43 by bnkosi           ###   ########.fr       */
+/*   Updated: 2019/08/23 11:12:22 by bnkosi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,14 +80,14 @@ void	verify_width(int fd, int wd, int twd)
 	}
 }
 
-void	verify_file(int fd, char *file_)
+void	verify_file(int fd, char *filen)
 {
 	int wd;
 	int twd;
 
 	wd = 0;
 	twd = 0;
-	if (ft_strstr(file_, ".fdf") == 0)
+	if (ft_strstr(filen, ".fdf") == 0)
 	{
 		ft_putendl("Error: Incorrect filename");
 		exit(0);
