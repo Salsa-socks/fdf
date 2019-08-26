@@ -19,7 +19,7 @@
 # include <wchar.h>
 # include <fcntl.h>
 # include <stdio.h>
-# define BUFF_SIZE 1
+# define BUFF_SIZE 100
 # define MAX_FD 1024 + 1
 
 typedef struct		s_list
