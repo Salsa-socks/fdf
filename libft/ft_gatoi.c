@@ -20,13 +20,13 @@ int	ft_gatoi(char *str)
 
 	i = 0;
 	j = 0;
-
+	sign  = 1;
 	if (str[j] == '-' || str[j] == '+')
 	{
 		sign = (str[j] == '-' ? - 1 : 1);
 		j++;
 	}
-	while (str[j] && str[j] >= '0' && str[j] <= '9')
+	while (str[j] != '\0' && str[j] >= '0' && str[j] <= '9')
 	{
 		i = i * 10 + str[j] - '0';
 		j++;

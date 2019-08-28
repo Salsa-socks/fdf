@@ -25,7 +25,7 @@ int *strtointcopy(char *str)
 	res = ft_memalloc((len) * sizeof(int));
 	while (i < len)
 	{
-		if (!(ft_isspace(str[i])) && str[i])
+		if (!(ft_isspace(str[i])) && str[i] != '\0')
 		{
 			str[j] = ft_gatoi(&str[i]);
 			i += ft_nbrlen(str[i]);
@@ -34,6 +34,9 @@ int *strtointcopy(char *str)
 		else
 			i++;
 	}
+	j = 0;
+	while (j < 11)
+		j++;
 	return (res);
 }
 
@@ -71,10 +74,7 @@ void		line_h(int fd, t_map *fmlist)
 		bigline = ft_strsplit(line, ' ');
 		fmlist->w = ft_strlenarr(bigline);
 		while (bigline[i])
-		{
-			free(bigline[i]);
-			i++;
-		}
+			free(bigline[i++]);
 		free(bigline);
 		free(line);
 		wth++;

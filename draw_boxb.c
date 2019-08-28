@@ -14,12 +14,12 @@
 
 void	set_draw_line(t_map *fmap)
 {
-	fmap->y = fmap->y1;
 	fmap->x = fmap->x1;
-	fmap->dx = abs(fmap->y2 - fmap->y1);
+	fmap->y = fmap->y1;
 	fmap->dx = abs(fmap->x2 - fmap->x1);
-	fmap->signx = fmap->x2 > fmap->x1 ? 1 : -1;
-	fmap->signy = fmap->y2 > fmap->y1 ? 1 : -1;
+	fmap->dy = abs(fmap->y2 - fmap->y1);
+	fmap->signx = (fmap->x2 > fmap->x1) ? 1 : -1;
+	fmap->signy = (fmap->y2 > fmap->y1) ? 1 : -1;
 	fmap->i = 0;
 	fmap->tmp = 0;
 }
