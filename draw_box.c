@@ -29,14 +29,14 @@ int		find_space(t_map *fmap)
 		i = 10;
 	if (fmap->w >= 40)
 		i = 5;
-	if (fmap->w >= 15 && fmap->h <= 15)
-		i = 60;
-	if (fmap->w >= 18 && fmap->h <= 25)
-		i = 40;
 	if (fmap->w >= 18 && fmap->h <= 15)
 		i = 30;
 	if (fmap->w >= 20 && fmap->h <= 30)
 		i = 25;
+	if (fmap->w >= 18 && fmap->h <= 25)
+		i = 40;
+	if (fmap->w >= 15 && fmap->h <= 15)
+		i = 60;
 	return (i);
 }
 
