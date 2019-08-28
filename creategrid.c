@@ -69,7 +69,7 @@ void		line_h(int fd, t_map *fmlist)
 	if (get_next_line(fd, &line) > 0)
 	{
 		bigline = ft_strsplit(line, ' ');
-		fmlist->w = ft_strlen(*bigline);
+		fmlist->w = ft_strlenarr(bigline);
 		while (bigline[i])
 		{
 			free(bigline[i]);

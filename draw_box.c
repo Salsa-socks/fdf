@@ -46,10 +46,10 @@ int		create_box(t_map *fmap)
 	int	ht;
 	int val;
 
+	val = find_space(fmap);
 	fmap->x1 = 0;
 	fmap->y1 = 0;
 	ht = 0;
-	val = find_space(fmap);
 	while (ht != fmap->h)
 	{
 		fmap->x1 = 0;
