@@ -21,23 +21,6 @@ void	info_str(t_map *fmap)
 	mlx_string_put(fmap->mlx, fmap->window,10, 90, 0x98FB98, ".........");
 }
 
-int		escclose(int key, t_map *fmap)
-{
-	if (!(fmap->window))
-		return (0);
-	if (key == 17)
-	{
-		mlx_clear_window(fmap->mlx, fmap->window);
-		build_z(key, fmap);
-	}
-	if (key == 53)
-	{
-		ft_putendl("Closing Program");
-		exit(0);
-	}
-	return (0);	
-}
-
 int		color_key(int key, t_map *fmap)
 {
 	if (key == 12)
@@ -65,4 +48,23 @@ int		color_key(int key, t_map *fmap)
 		draw_grid(fmap);
 	}
 	return (0);
+}
+
+int		escclose(int key, t_map *fmap)
+{
+	if (!(fmap->window))
+		return (0);
+	if (key == 12 || key == 13 || key == 14 || key == 15)
+	color_key(key, fmap);
+	if (key == 17)
+	{
+		mlx_clear_window(fmap->mlx, fmap->window);
+		build_z(key, fmap);
+	}
+	if (key == 53)
+	{
+		ft_putendl("Closing Program");
+		exit(0);
+	}
+	return (0);	
 }

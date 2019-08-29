@@ -12,6 +12,26 @@
 
 #include "fdf.h"
 
+int find_z(int x, int y, t_map *fmap)
+{
+	int z;
+	int wd;
+
+	z = 0;
+	wd = 0;
+	while (wd != y)
+	{
+		z = fmap->map[x][wd];
+		wd++;
+		if (wd == fmap->h + 1)
+		{
+			ft_putendl("Error: unable to find Z value");
+			exit(0);
+		}
+	}
+	return (z);
+}
+
 int		build_z(int key, t_map *fmap)
 {
 	if (key == 17)
@@ -36,32 +56,12 @@ int		build_z(int key, t_map *fmap)
 	return (0);
 }
 
-int find_z(int x, int y, t_map *fmap)
-{
-	int z;
-	int wd;
-
-	z = 0;
-	wd = 0;
-	while (wd != y)
-	{
-		z = fmap->map[x][wd];
-		wd++;
-		if (wd == fmap->h + 1)
-		{
-			ft_putendl("Error: unable to find Z value");
-			exit(0);
-		}
-	}
-	return (z);
-}
-
 void	make_window(t_map *fmap)
 {
 	fmap->mlx = mlx_init();
 	fmap->window = mlx_new_window(fmap->mlx, fmap->w_width, fmap->w_height, "FDF");
 	mlx_key_hook(fmap->window, escclose, fmap);
-	mlx_key_hook(fmap->window, color_key, fmap);
+	mlx_key_hook(fmap->window, build_z, fmap);
 	fmap->xgrid = creategrid(fmap);
 	fmap->ygrid = creategrid(fmap);
 	create_box(fmap);
