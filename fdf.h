@@ -12,11 +12,11 @@
 
 #ifndef FDF_H
 # define FDF_H
-#include "libft/libft.h"
-#include <stdlib.h>
-#include <fcntl.h>
-#include <math.h>
-#include "./minilibx/mlx.h"
+# include "libft/libft.h"
+# include <stdlib.h>
+# include <fcntl.h>
+# include <math.h>
+# include "./minilibx/mlx.h"
 
 typedef struct	t_map
 {

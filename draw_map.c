@@ -101,7 +101,7 @@ int		**createmap(t_map *fmaplist)
 	int **map;
 	int amnt;
 
-	map = (int **)ft_memalloc(sizeof(int *) *fmaplist->h);
+	map = (int **)ft_memalloc(sizeof(int *) * fmaplist->h);
 	amnt = fmaplist->h - 1;
 	while (amnt >= 0)
 	{
